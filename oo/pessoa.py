@@ -15,3 +15,7 @@ if __name__ == '__main__':
     print(cadu.cumprimentar())
     for filho in cadu.filhos:
         print(filho.nome)
+    cadu.sobrenome = 'Artioli'
+    del cadu.filhos
+    print(cadu.__dict__)
+    print(jose.__dict__)
