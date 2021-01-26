@@ -18,10 +18,14 @@ class Pessoa:
         return f'{cls} - olhos {cls.olhos}'
 
 
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
     ana = Pessoa(nome='Ana')
     jose = Pessoa(nome='José')
-    cadu = Pessoa(ana, jose, nome='Cadu', idade=17)
+    cadu = Homem(ana, jose, nome='Cadu', idade=17)
     print(cadu.cumprimentar())
     for filho in cadu.filhos:
         print(filho.nome)
@@ -35,3 +39,7 @@ if __name__ == '__main__':
     print(jose.olhos)
     print(Pessoa.metodo_estatico(), cadu.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), cadu.nome_e_atributos_de_classe())
+    pessoa=Pessoa('Anônimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(cadu, Homem))
