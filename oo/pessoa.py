@@ -22,16 +22,19 @@ class Homem(Pessoa):
     pass
 
 
+class Mutante(Pessoa):
+    olhos = 3
+
+
 if __name__ == '__main__':
     ana = Pessoa(nome='Ana')
     jose = Pessoa(nome='José')
-    cadu = Homem(ana, jose, nome='Cadu', idade=17)
+    cadu = Mutante(ana, jose, nome='Cadu', idade=17)
     print(cadu.cumprimentar())
     for filho in cadu.filhos:
         print(filho.nome)
     cadu.sobrenome = 'Artioli'
     del cadu.filhos
-    jose.olhos = 1
     print(cadu.__dict__)
     print(jose.__dict__)
     print(Pessoa.olhos)
@@ -43,3 +46,4 @@ if __name__ == '__main__':
     print(isinstance(pessoa, Pessoa))
     print(isinstance(pessoa, Homem))
     print(isinstance(cadu, Homem))
+    print(cadu.olhos)
